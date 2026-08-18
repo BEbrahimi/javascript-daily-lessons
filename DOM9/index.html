@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Test</title>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        Electro<span>Mart</span>
+    </div>
+
+    <button class="cart-button" id="cartButton">
+        🛒 Cart
+        <span id="cartCount">0</span>
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <h1>Electronics Store</h1>
+
+    <p>
+        Find the best electronics at the best prices
+    </p>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+            autocomplete="off"
+        >
+
+        <button id="searchButton">
+            🔎 Search
+        </button>
+
+    </div>
+
+    <div class="keyboard-info">
+        Type to search • Press <b>Enter</b> to search • Press <b>Escape</b> to clear
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+    <section class="filter-section">
+        <h2>Our Products</h2>
+        <div class="categories">
+            <button class="category-btn active" data-category="All">
+                All
+            </button>
+
+            <button class="category-btn" data-category="Laptop">
+                Laptop
+            </button>
+
+            <button class="category-btn" data-category="Smartphone">
+                Smartphone
+            </button>
+
+            <button class="category-btn" data-category="Headphone">
+                Headphone
+            </button>
+
+            <button class="category-btn" data-category="Accessories">
+                Accessories
+            </button>
+        </div>
+
+    </section>
+
+    <p id="resultCount" style="margin-bottom:15px; color:#6b7280;"></p>
+
+
+   
+
+    <section class="products-grid" id="productsContainer">
+
+        <!-- Product will be generated using JavaScript -->
+
+        <div class="no-result" id="noResult">
+
+            <h3>🔍 No Products Found</h3>
+
+            <p>
+                Try another search keyword.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-panel" id="cartPanel">
+
+    <div class="cart-header">
+
+        <h2>Shopping Cart</h2>
+
+        <button class="close-cart" id="closeCart">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="cart-items" id="cartItems">
+
+        <div class="empty-cart">
+            Your cart is empty.
+        </div>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="total">
+
+            <span>Total:</span>
+
+            <span id="cartTotal">
+                $0
+            </span>
+
+        </div>
+
+        <button class="checkout" id="checkoutButton">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>
+        © 2026 ElectroMart | Electronics Store
+    </p>
+
+</footer>
+
+</body>
+<script src="js/app.js"></script>
+</html>

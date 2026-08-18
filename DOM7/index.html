@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 4 - DOM CSS</title>
+
+    <style>
+
+        /* =========================
+           General Styles
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background-color: #f4f4f4;
+            color: #222;
+
+            transition: 0.4s;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+
+            margin: 100px auto;
+
+            padding: 40px;
+
+            text-align: center;
+
+            background-color: white;
+
+            border-radius: 15px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+            transition: 0.4s;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 12px 25px;
+
+            border: none;
+            border-radius: 8px;
+
+            background-color: #222;
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           Dark Mode
+        ========================= */
+
+        body.dark {
+            background-color: #121212;
+            color: white;
+        }
+
+        body.dark .container {
+            background-color: #1f1f1f;
+
+            box-shadow:
+                0 10px 30px rgba(255, 255, 255, 0.05);
+        }
+
+        body.dark button {
+            background-color: white;
+            color: #222;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1 id="title">
+            Welcome to My Website
+        </h1>
+
+        <p id="description">
+            This is a simple project for learning
+            how JavaScript can work with CSS using DOM.
+        </p>
+
+        <button id="darkModeBtn">
+            🌙 Dark Mode
+        </button>
+
+    </div>
+
+
+    <script>
+
+        // ==========================================
+        // 1. Selecting HTML Elements
+        // ==========================================
+
+        const title = document.getElementById("title");
+
+        const description =
+            document.getElementById("description");
+
+        const button =
+            document.getElementById("darkModeBtn");
+
+        const body = document.body;
+
+
+        // ==========================================
+        // 2. style Property
+        // ==========================================
+
+        // مثال:
+        // title.style.color = "red";
+        // title.style.fontSize = "40px";
+
+        // برای اینکه ظاهر اصلی خراب نشود،
+        // فعلاً این دستورات را اجرا نمی‌کنیم.
+
+
+        // ==========================================
+        // 3. className
+        // ==========================================
+
+        console.log("Current Class:");
+
+        console.log(body.className);
+
+
+        // ==========================================
+        // 4. classList
+        // ==========================================
+
+        console.log("Current Classes:");
+
+        console.log(body.classList);
+
+
+        // ==========================================
+        // 5. add()
+        // ==========================================
+
+        // body.classList.add("dark");
+
+        // اگر این خط را فعال کنیم،
+        // Dark Mode مستقیماً فعال می‌شود.
+
+
+        // ==========================================
+        // 6. remove()
+        // ==========================================
+
+        // body.classList.remove("dark");
+
+        // این دستور کلاس dark را حذف می‌کند.
+
+
+        // ==========================================
+        // 7. contains()
+        // ==========================================
+
+        console.log(
+            "Is Dark Mode Active?",
+            body.classList.contains("dark")
+        );
+
+
+        // ==========================================
+        // 8. toggle()
+        // ==========================================
+
+        button.addEventListener("click", function () {
+
+            // اگر dark وجود داشته باشد:
+            // حذف می‌شود.
+
+            // اگر dark وجود نداشته باشد:
+            // اضافه می‌شود.
+
+            body.classList.toggle("dark");
+
+
+            // ======================================
+            // 9. contains()
+            // ======================================
+
+            if (body.classList.contains("dark")) {
+
+                // Dark Mode فعال است
+
+                button.textContent = "☀️ Light Mode";
+
+                title.textContent =
+                    "Dark Mode is Active 🌙";
+
+                description.textContent =
+                    "The website is now using Dark Mode.";
+
+            }
+
+            else {
+
+                // Light Mode فعال است
+
+                button.textContent = "🌙 Dark Mode";
+
+                title.textContent =
+                    "Welcome to My Website";
+
+                description.textContent =
+                    "This is a simple project for learning how JavaScript can work with CSS using DOM.";
+
+            }
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
