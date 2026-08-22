@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Todo List</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .todo-container {
+            width: 400px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            display: flex;
+            gap: 10px;
+        }
+
+        #todoInput {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        #addBtn {
+            padding: 12px 18px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #todoList {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f1f3f5;
+            border-radius: 8px;
+        }
+
+        .todo-text {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .delete-btn {
+            border: none;
+            background: crimson;
+            color: white;
+            padding: 7px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="todo-container">
+
+        <h1>My Todo List 📝</h1>
+
+        <div class="input-box">
+            <input
+                type="text"
+                id="todoInput"
+                placeholder="Enter a task..."
+            >
+
+            <button id="addBtn">
+                Add
+            </button>
+        </div>
+
+        <ul id="todoList"></ul>
+
+    </div>
+
+    <script>
+
+        const todoInput = document.getElementById("todoInput");
+        const addBtn = document.getElementById("addBtn");
+        const todoList = document.getElementById("todoList");
+
+
+        // Add Todo
+        addBtn.addEventListener("click", function () {
+
+            const text = todoInput.value.trim();
+
+            if (text === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            const li = document.createElement("li");
+
+            li.className = "todo-item";
+
+            li.innerHTML = `
+                <span class="todo-text">
+                    ${text}
+                </span>
+
+                <button class="delete-btn">
+                    Delete
+                </button>
+            `;
+
+            todoList.appendChild(li);
+
+            todoInput.value = "";
+
+        });
+
+
+        // Event Delegation
+        todoList.addEventListener("click", function (event) {
+
+            // Delete Todo
+            if (event.target.classList.contains("delete-btn")) {
+
+                event.target.parentElement.remove();
+
+            }
+
+
+            // Complete Todo
+            if (event.target.classList.contains("todo-text")) {
+
+                event.target.classList.toggle("completed");
+
+            }
+
+        });
+
+
+        // Add Todo with Enter
+        todoInput.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
+
+                addBtn.click();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
