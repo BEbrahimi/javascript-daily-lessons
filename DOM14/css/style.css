@@ -1,0 +1,102 @@
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 500px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .input-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        #addBtn {
+            padding: 12px 18px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #taskContainer {
+            border: 2px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            margin-bottom: 8px;
+            border-radius: 6px;
+        }
+
+        .task:last-child {
+            margin-bottom: 0;
+        }
+
+        .task-text {
+            cursor: pointer;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .delete-btn {
+            border: none;
+            background: #dc2626;
+            color: white;
+            padding: 7px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #eventLog {
+            margin-top: 20px;
+            padding: 12px;
+            background: #111827;
+            color: white;
+            border-radius: 6px;
+            min-height: 50px;
+            font-size: 14px;
+        }
