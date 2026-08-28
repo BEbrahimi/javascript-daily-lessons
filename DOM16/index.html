@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register Form</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="register-container">
+
+        <div class="form-header">
+            <div class="logo">T</div>
+
+            <h1>Create Account</h1>
+
+            <p>
+                Register your account and get started
+            </p>
+        </div>
+
+
+        <form id="registerForm">
+
+            <div class="row">
+
+                <div class="input-group">
+
+                    <label for="firstName">
+                        First Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="firstName"
+                        placeholder="Enter first name"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="lastName">
+                        Last Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="lastName"
+                        placeholder="Enter last name"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="example@gmail.com"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="+93 700 000 000"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="country">
+                    Country
+                </label>
+
+                <select id="country">
+
+                    <option value="">
+                        Select your country
+                    </option>
+
+                    <option value="Afghanistan">
+                        Afghanistan
+                    </option>
+
+                    <option value="India">
+                        India
+                    </option>
+
+                    <option value="Pakistan">
+                        Pakistan
+                    </option>
+
+                    <option value="Iran">
+                        Iran
+                    </option>
+
+                    <option value="Germany">
+                        Germany
+                    </option>
+
+                    <option value="USA">
+                        United States
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create password"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm password"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="terms">
+
+                <input
+                    type="checkbox"
+                    id="terms"
+                >
+
+                <label for="terms">
+                    I agree to the Terms & Conditions
+                </label>
+
+            </div>
+
+
+            <button type="submit">
+                Create Account
+            </button>
+
+
+            <p id="message"></p>
+
+        </form>
+
+    </div>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
